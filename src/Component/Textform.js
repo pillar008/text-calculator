@@ -31,15 +31,25 @@ export const Textform = (props) => {
           rows="10"
         ></textarea>
         <div>
-          <button className="btn btn-primary my-3 " onClick={handleUpCase}>
+          <button className="btn btn-primary my-3 mx-2" onClick={handleUpCase}>
             Convert To UPPER CASE
           </button>
-        </div>
-        <div>
-          <button className="btn btn-primary my-3" onClick={handleLowCase}>
+          <button className="btn btn-primary my-3 mx-2" onClick={handleLowCase}>
             Convert To lower case
           </button>
         </div>
+      </div>
+
+      <div className="container my-3">
+        <h2>Your Text Summary</h2>
+        <p>
+          {text.split(" ").length} words and {text.length} characters
+          <p>
+            {0.008 * text.split(" ").length} minutes to read the writen text
+          </p>
+          <h2>Preview</h2>
+          <p>{text}</p>
+        </p>
       </div>
     </>
   );
