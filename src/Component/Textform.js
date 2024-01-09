@@ -5,15 +5,18 @@ export const Textform = (props) => {
     console.log("Upper case clicked" + text);
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Converted to upper Case", "success");
   };
   const handleLowCase = () => {
     // console.log("Lower case clicked" + text);
     let newText = text.toLocaleLowerCase();
     setText(newText);
+    props.showAlert("Converted to lower Case", "success");
   };
   const handleClear = () => {
     let newText = "";
     setText(newText);
+    props.showAlert("Text area cleared", "success");
   };
   const handleOnChange = (event) => {
     // console.log("ON change");
@@ -65,14 +68,12 @@ export const Textform = (props) => {
 
         <div className="container my-3">
           <h2>Your Text Summary</h2>
+          {text.split(" ").length} words and {text.length} characters
           <p>
-            {text.split(" ").length} words and {text.length} characters
-            <p>
-              {0.008 * text.split(" ").length} minutes to read the writen text
-            </p>
-            <h2>Preview</h2>
-            <p>{text.length > 0 ? text : "Enter Your Text To Preview Here"}</p>
+            {0.008 * text.split(" ").length} minutes to read the writen text
           </p>
+          <h2>Preview</h2>
+          <p>{text.length > 0 ? text : "Enter Your Text To Preview Here"}</p>
         </div>
       </div>
     </>
