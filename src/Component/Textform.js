@@ -63,6 +63,27 @@ export const Textform = (props) => {
             <button className="btn btn-primary my-3 mx-2" onClick={handleClear}>
               Clear Text
             </button>
+            {/* start: from here till the comment which says ends here is an option to convert to dark mode for mobile devices */}
+            <div
+              className={`form-check form-switch mx-2 text-${
+                props.mode === "light" ? "dark" : "light"
+              }`}
+            >
+              <input
+                className="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="flexSwitchCheckDefault"
+                onClick={props.toggleMode}
+              />
+              <label
+                className="form-check-label"
+                htmlFor="flexSwitchCheckDefault"
+              >
+                Enable Dark Mode
+              </label>
+            </div>
+            {/* Ends Here: Remove this when not required any more */}
           </div>
         </div>
 

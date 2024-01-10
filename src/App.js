@@ -40,6 +40,7 @@ function App() {
         <Textform
           heading="Enter the text to analyse"
           showAlert={showAlert}
+          toggleMode={toggleMode}
           mode={mode}
         />
       </div>
